@@ -19,10 +19,17 @@ document.onkeyup = function (event) {
     // must find a way to keep current guesses while adding up the new ones
     // to be separated by commas
 
+    // 1st try:
     // for (i = 0, i <= guess.length-1, i++) {
     //     var newGuess = document.createElement("guess");
     //     newGuess.innerHTML = myGuess.responseText;
     //     document.getElementById("guess").appendChild("newGuess");
+    // }
+
+    // 2nd try:
+    // for (i = 0; i <= myGuess.length; i++) {
+    //     var totalGuess = document.getElementById("guess")
+    //     var totalGuess = myGuess[i] + ",";
     // }
     
     var compGuess = compRand[Math.floor(Math.random() * compRand.length)];
