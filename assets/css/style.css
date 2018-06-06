@@ -19,5 +19,9 @@ h1 {
 
 p {
     margin-left: 30px;
+    margin-right: 30px;
     padding-bottom: 10px;
+    background-color: mediumseagreen;
+    opacity: .8;
+    padding: 10px 10px;
 }
