@@ -14,23 +14,9 @@ var left = 16;
 document.onkeyup = function (event) {
 
     var myGuess = document.getElementById("guess");
-    guess.textContent = event.key;
+    guess.textContent = event.key + "," + guess.textContent;
 
-    // must find a way to keep current guesses while adding up the new ones
-    // to be separated by commas
-
-    // 1st try:
-    // for (i = 0, i <= guess.length-1, i++) {
-    //     var newGuess = document.createElement("guess");
-    //     newGuess.innerHTML = myGuess.responseText;
-    //     document.getElementById("guess").appendChild("newGuess");
-    // }
-
-    // 2nd try:
-    // for (i = 0; i <= myGuess.length; i++) {
-    //     var totalGuess = document.getElementById("guess")
-    //     var totalGuess = myGuess[i] + ",";
-    // }
+    // once User have 0 Guesses Left, "Your Guesses So Far" must reset and remove all the letters guessed
     
     var compGuess = compRand[Math.floor(Math.random() * compRand.length)];
 
@@ -44,7 +30,10 @@ document.onkeyup = function (event) {
     if (left <= 0) {
         lost++;
         left=15;
+        guess.textContent="";
+        // do not repeat letters that have been guessed
     } 
+
 
     var html =
     "<p> Wins: " + wins + "</p> <br>" +
