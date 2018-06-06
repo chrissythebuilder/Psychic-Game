@@ -9,12 +9,15 @@ console.log(compRand);
 var wins = 0;
 var lost = 0;
 var left = 16;
-// var guess = 27;
+
 
 document.onkeyup = function (event) {
 
     var myGuess = document.getElementById("guess");
     guess.textContent = event.key;
+
+    // must find a way to keep current guesses while adding up the new ones
+    // to be separated by commas
 
     // for (i = 0, i <= guess.length-1, i++) {
     //     var newGuess = document.createElement("guess");
@@ -24,8 +27,9 @@ document.onkeyup = function (event) {
     
     var compGuess = compRand[Math.floor(Math.random() * compRand.length)];
 
-    if (myGuess === "compGuess") {
+    if (myGuess === compGuess) {
         wins++;
+        left=15;
     } else {
         left--;
     }
@@ -35,13 +39,11 @@ document.onkeyup = function (event) {
         left=15;
     } 
 
-    
-
     var html =
-    "<p> Wins: " + wins + "</p>" +
-    "<p> Losses: " + lost + "</p>" +
-    "<p> Guesses Left: " + left + "</p>";
-    
+    "<p> Wins: " + wins + "</p> <br>" +
+    "<p> Losses: " + lost + "</p> <br>" +
+    "<p> Guesses Left: " + left + "</p> <br>";
+
     document.querySelector("#start").innerHTML = html;
 
 

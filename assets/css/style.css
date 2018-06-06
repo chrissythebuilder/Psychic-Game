@@ -8,3 +8,16 @@ h1 {
     border: 2px solid peru;
     border-radius: 10px;
 }
+
+#intro {
+    font-size: 150%;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: -10px;
+    letter-spacing: .2em;
+}
+
+p {
+    margin-left: 30px;
+    padding-bottom: 10px;
+}
